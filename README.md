@@ -53,7 +53,7 @@ Choose your look in the module settings:
 1. Go to **Modules** in Foundry VTT and paste this manifest URL:
 
    ```
-   https://
+   https://github.com/mordachai/art-for-daggerheart/raw/main/module.json
    ```
 
 ---
