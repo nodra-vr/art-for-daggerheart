@@ -1,0 +1,18 @@
+{
+  "id": "art-for-daggerheart",
+  "title": "Art for Daggerheart",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "authors": [],
+  "flags": {
+    "canUpload": true
+  },
+  "packs": [],
+  
+  "esmodules": ["./scripts/init.js"],
+  
+  "description": ""
+}
