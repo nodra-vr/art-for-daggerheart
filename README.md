@@ -11,6 +11,8 @@ We’re talking unique portraits and tokens for all the adversaries — all AI-g
 You get to pick if you want dynamic wildcard tokens that change each time they hit the map, or clean circular tokens for a sharper look.
 And if you want extra style, you can add the built-in Foundry Token Rings around them for that “pop” factor.
 
+<img width="1552" height="934" alt="image" src="https://github.com/user-attachments/assets/1f6fca88-9c88-409c-81f3-234c0ecc724e" />
+
 ---
 
 ## Features
@@ -28,10 +30,15 @@ And if you want extra style, you can add the built-in Foundry Token Rings around
 
 Choose your look in the module settings:
 
+<img width="800" height="698" alt="image" src="https://github.com/user-attachments/assets/8d4b2ab0-3976-4814-8de5-95639d1368f1" />
+
 * **Wildcards Only** – Varied tokens from the `tokens/` folder.
 * **Wildcards + Rings** – Varied tokens plus Foundry’s built-in rings.
 * **Circle Only** – Circular tokens from the `circle/` folder.
 * **Circle + Rings** – Circular tokens plus Foundry’s built-in rings.
+
+<img width="1434" height="771" alt="image" src="https://github.com/user-attachments/assets/084f1980-3585-4f41-937b-28a89589fa7a" />
+
 ---
 
 ## Installation
