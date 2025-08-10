@@ -43,14 +43,9 @@ Choose your look in the module settings:
 
 ## Installation
 
-### From the Foundry VTT Package Browser
+### Manual Install (until v1.0)
 
-1. Open **Add-on Modules** in Foundry VTT.
-2. Search for **Art for Daggerheart** and install.
-
-### Manual Install
-
-1. Go to **Modules** in Foundry VTT and paste this manifest URL:
+1. Go to **Add-on Modules** in Foundry VTT, **Install Module** and paste this manifest URL in the bottom input:
 
    ```
    https://github.com/mordachai/art-for-daggerheart/raw/main/module.json
