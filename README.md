@@ -50,9 +50,8 @@ Choose your look in the module settings:
 
 1. Go to **Add-on Modules** in Foundry VTT, **Install Module** and paste this manifest URL in the bottom input:
 
-   ```
+   ```   
    https://github.com/mordachai/art-for-daggerheart/releases/latest/download/art-for-daggerheart.zip"
-
    ```
 ---
 
