@@ -1,12 +1,15 @@
-## Current Progress (Adversaries):
-![Progress](https://progress-bar.xyz/52/?scale=129&title=Core&width=700&color=babaca&prefix=&suffix=/129) 
-
-# Art for Daggerheart
+### Current Progress (Adversaries):
+![Progress](https://progress-bar.xyz/52/?scale=129&title=Core&width=1000&color=babaca&prefix=&suffix=/129)
 
 > Work in progress!
 > We’re building up a full set of portraits and varied tokens for all adversaries.
 > Some tokens might have just 3 variants, others can have 10 or more.
 > There’s no “right” number — the important thing is to have at least a few for variety, and usually you’ll see 3–4 per adversary.
+
+
+---
+
+# Art for Daggerheart
 
 Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game.
 We’re talking unique portraits and tokens for all the adversaries — all AI-generated just for this module.
@@ -51,7 +54,7 @@ Choose your look in the module settings:
 1. Go to **Add-on Modules** in Foundry VTT, **Install Module** and paste this manifest URL in the bottom input:
 
    ```   
-   https://github.com/mordachai/art-for-daggerheart/releases/latest/download/art-for-daggerheart.zip"
+   https://github.com/mordachai/art-for-daggerheart/raw/main/module.json
    ```
 ---
 
