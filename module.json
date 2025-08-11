@@ -43,7 +43,7 @@
 
   "url": "https://github.com/mordachai/art-for-daggerheart",
   "manifest": "https://github.com/mordachai/art-for-daggerheart/raw/main/module.json",
-  "download": "https://github.com/mordachai/art-for-daggerheart/raw/main/art-for-daggerheart.zip",
+  "download": "https://github.com/mordachai/art-for-daggerheart/releases/latest/download/art-for-daggerheart.zip",
   
   "description": "Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game. We’re talking unique portraits and tokens for all the adversaries — all AI-generated just for this module."
 }
