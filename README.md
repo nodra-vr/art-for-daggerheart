@@ -1,5 +1,5 @@
 ### Current Progress (Adversaries):
-![Progress](https://progress-bar.xyz/80/?scale=129&title=Core&width=1000&color=babaca&prefix=&suffix=/129)
+![Progress](https://progress-bar.xyz/88/?scale=129&title=Core&width=1000&color=babaca&prefix=&suffix=/129)
 
 > Work in progress!
 > We’re building up a full set of portraits and varied tokens for all adversaries.
