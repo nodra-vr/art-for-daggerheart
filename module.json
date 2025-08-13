@@ -1,7 +1,7 @@
 {
   "id": "art-for-daggerheart",
   "title": "Art for Daggerheart",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -26,8 +26,9 @@
   "flags": {
     "canUpload": true,
     "compendiumArtMappings": {
-      "art-for-daggerheart": {
-        "mapping": "modules/art-for-daggerheart/mappings/adversaries-mapping.json"
+      "daggerheart": {
+        "mapping": "modules/art-for-daggerheart/mappings/adversaries-mapping.json",
+        "credit": "Art by Gus & Yuri"
       }
     }
   },
