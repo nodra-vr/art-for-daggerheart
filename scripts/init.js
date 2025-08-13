@@ -14,6 +14,37 @@ const TOKEN_MODE = {
   CIRCLE_RINGS: "circleRings"
 };
 
+/* ---------------- Debug Logging Functions ---------------- */
+function debugLog(...args) {
+  if (game.settings.get(MODULE_ID, "debugLogging")) {
+    console.log(`[${MODULE_ID}] DEBUG:`, ...args);
+  }
+}
+
+function debugInfo(...args) {
+  if (game.settings.get(MODULE_ID, "debugLogging")) {
+    console.info(`[${MODULE_ID}] DEBUG:`, ...args);
+  }
+}
+
+function debugWarn(...args) {
+  if (game.settings.get(MODULE_ID, "debugLogging")) {
+    console.warn(`[${MODULE_ID}] DEBUG:`, ...args);
+  }
+}
+
+function debugError(...args) {
+  if (game.settings.get(MODULE_ID, "debugLogging")) {
+    console.error(`[${MODULE_ID}] DEBUG:`, ...args);
+  }
+}
+
+function debugNotify(message, type = "info") {
+  if (game.settings.get(MODULE_ID, "debugLogging")) {
+    ui.notifications?.[type](`[${MODULE_ID}] ${message}`);
+  }
+}
+
 // Enhanced Item class that applies token configuration
 class EnhancedItem extends CONFIG.Item.documentClass {
   _initializeSource(source, options = {}) {
@@ -214,34 +245,40 @@ function registerSettings() {
   game.settings.register(MODULE_ID, "tokenAutoRotate", {
     name: "Token Auto Rotate",
     hint: "If enabled, core token auto-rotation will be turned on for this world.",
-    scope: "world", config: true, type: Boolean, default: true
+    scope: "world", 
+    config: true, 
+    type: Boolean, 
+    default: true
   });
   
   game.settings.register(MODULE_ID, "debugLogging", {
     name: "Debug Logging", 
-    hint: "If enabled, the module will print detailed per-actor diagnostics to the console.",
-    scope: "world", config: true, type: Boolean, default: false
+    hint: "If enabled, the module will print detailed per-actor diagnostics to the console and show debug notifications.",
+    scope: "world", 
+    config: true, 
+    type: Boolean, 
+    default: false
   });
   
   game.settings.register(MODULE_ID, "ringColor", {
     name: "Token Ring Color",
     hint: "Choose the color for token rings when ring modes are enabled.",
-    scope: "world", 
-    config: true, 
-    type: String, 
+    scope: "world",
+    config: true,
+    type: new foundry.data.fields.ColorField({}),
     default: "#8f0000",
-    onChange: () => {
-      if (game.user.isGM) {
-        ui.notifications?.info(`[${MODULE_ID}] Reloading to apply new ring color...`);
-        window.location.reload();
-      }
+    requiresReload: true,
+    onChange: (value) => {
+      debugNotify(`Ring color updated to ${value}.`);
     }
   });
-  
+
   game.settings.register(MODULE_ID, "tokenMode", {
     name: "Token Mode",
     hint: "Select token source and style.",
-    scope: "world", config: true, type: String,
+    scope: "world", 
+    config: true, 
+    type: String,
     choices: {
       [TOKEN_MODE.WILDCARDS]: "Wildcards Only",
       [TOKEN_MODE.WILDCARDS_RINGS]: "Wildcards + Rings", 
@@ -249,11 +286,9 @@ function registerSettings() {
       [TOKEN_MODE.CIRCLE_RINGS]: "Circle + Rings"
     },
     default: TOKEN_MODE.WILDCARDS_RINGS,
-    onChange: () => {
-      if (game.user.isGM) {
-        ui.notifications?.info(`[${MODULE_ID}] Reloading to apply new token mode...`);
-        window.location.reload();
-      }
+    requiresReload: true,
+    onChange: (value) => {
+      debugNotify(`Token mode changed to ${value}.`);
     }
   });
 }
@@ -267,11 +302,11 @@ function registerSettings() {
 async function generateMappingJson() {
   const pack = game.packs.get(ADVERSARIES_PACK);
   if (!pack) {
-    console.error(`[${MODULE_ID}] Compendium "${ADVERSARIES_PACK}" not found.`);
+    debugError(`Compendium "${ADVERSARIES_PACK}" not found.`);
     return;
   }
 
-  console.info(`[${MODULE_ID}] Generating mapping JSON...`);
+  debugInfo("Generating mapping JSON...");
   
   const docs = await pack.getDocuments();
   const mapping = { [ADVERSARIES_PACK]: {} };
@@ -294,11 +329,14 @@ async function generateMappingJson() {
       };
       foundCount++;
     } else {
-      console.warn(`[${MODULE_ID}] No portrait found for: ${name}`);
+      debugWarn(`No portrait found for: ${name}`);
     }
   }
 
-  console.info(`[${MODULE_ID}] Found art for ${foundCount}/${totalCount} adversaries`);
+  debugInfo(`Found art for ${foundCount}/${totalCount} adversaries`);
+  debugLog("Generated mapping:", mapping);
+  
+  // Always show this final result regardless of debug setting
   console.log("Copy this JSON to your mappings/adversaries-mapping.json file:");
   console.log(JSON.stringify(mapping, null, 2));
   
@@ -374,35 +412,35 @@ async function processArtMapping(mapping) {
 async function loadArtMapping() {
   try {
     const mappingPath = "modules/art-for-daggerheart/mappings/adversaries-mapping.json";
-    console.info(`[${MODULE_ID}] Loading art mapping from: ${mappingPath}`);
+    debugInfo(`Loading art mapping from: ${mappingPath}`);
     
     const rawMapping = await foundry.utils.fetchJsonWithTimeout(mappingPath);
-    console.info(`[${MODULE_ID}] Raw mapping loaded:`, !!rawMapping);
+    debugInfo("Raw mapping loaded:", !!rawMapping);
     
     if (rawMapping && rawMapping[ADVERSARIES_PACK]) {
       const entryCount = Object.keys(rawMapping[ADVERSARIES_PACK]).length;
-      console.info(`[${MODULE_ID}] Found ${entryCount} art mappings`);
+      debugInfo(`Found ${entryCount} art mappings`);
       
       // Process the mapping to add token configurations
       const processedMapping = await processArtMapping(rawMapping);
-      console.info(`[${MODULE_ID}] Processed mapping:`, !!processedMapping);
+      debugInfo("Processed mapping:", !!processedMapping);
       
       // Store the processed mapping for use by EnhancedItem
       if (!game.modules.get(MODULE_ID)) {
-        console.error(`[${MODULE_ID}] Module not found in game.modules!`);
+        debugError("Module not found in game.modules!");
         return null;
       }
       
       game.modules.get(MODULE_ID).artMapping = processedMapping;
-      console.info(`[${MODULE_ID}] Art mapping stored successfully`);
+      debugInfo("Art mapping stored successfully");
       
       return processedMapping;
     } else {
-      console.warn(`[${MODULE_ID}] No adversaries found in mapping file`);
+      debugWarn("No adversaries found in mapping file");
       game.modules.get(MODULE_ID).artMapping = { [ADVERSARIES_PACK]: {} };
     }
   } catch (err) {
-    console.error(`[${MODULE_ID}] Could not load art mapping:`, err);
+    debugError("Could not load art mapping:", err);
     // Create empty mapping so the module doesn't break
     game.modules.get(MODULE_ID).artMapping = { [ADVERSARIES_PACK]: {} };
   }
@@ -419,7 +457,7 @@ async function regenerateAndApplyTokenMode() {
     const rawMapping = await foundry.utils.fetchJsonWithTimeout(mappingPath);
     
     if (rawMapping && rawMapping[ADVERSARIES_PACK]) {
-      console.info(`[${MODULE_ID}] Regenerating art mapping with current token mode...`);
+      debugInfo("Regenerating art mapping with current token mode...");
       
       // Reprocess with current token mode
       const processedMapping = await processArtMapping(rawMapping);
@@ -427,16 +465,16 @@ async function regenerateAndApplyTokenMode() {
       // Store the new mapping
       game.modules.get(MODULE_ID).artMapping = processedMapping;
       
-      console.info(`[${MODULE_ID}] Art mapping regenerated successfully`);
+      debugInfo("Art mapping regenerated successfully");
       
       // Apply to compendium documents
       await updateCompendiumWithNewMode();
       
-      ui.notifications?.info(`[${MODULE_ID}] Token mode applied to all adversaries!`);
+      debugNotify("Token mode applied to all adversaries!");
     }
   } catch (err) {
-    console.error(`[${MODULE_ID}] Regeneration failed:`, err);
-    ui.notifications?.error(`[${MODULE_ID}] Failed to apply token mode. Check console for details.`);
+    debugError("Regeneration failed:", err);
+    debugNotify("Failed to apply token mode. Check console for details.", "error");
   }
 }
 
@@ -450,14 +488,14 @@ async function updateCompendiumWithNewMode() {
   const wasLocked = pack.locked;
   if (wasLocked) {
     await pack.configure({ locked: false });
-    console.info(`[${MODULE_ID}] Unlocked compendium`);
+    debugInfo("Unlocked compendium");
   }
   
   try {
     const docs = await pack.getDocuments();
     const artMapping = game.modules.get(MODULE_ID)?.artMapping;
     
-    console.info(`[${MODULE_ID}] Updating compendium with new token mode...`);
+    debugInfo("Updating compendium with new token mode...");
     
     let updated = 0;
     for (const actor of docs) {
@@ -480,12 +518,12 @@ async function updateCompendiumWithNewMode() {
       }
     }
     
-    console.info(`[${MODULE_ID}] Updated ${updated} actors with new token mode`);
+    debugInfo(`Updated ${updated} actors with new token mode`);
   } finally {
     // Re-lock the compendium
     if (wasLocked) {
       await pack.configure({ locked: true });
-      console.info(`[${MODULE_ID}] Re-locked compendium`);
+      debugInfo("Re-locked compendium");
     }
   }
 }
@@ -500,6 +538,7 @@ Hooks.once("init", function () {
   // Expose helper functions for easy access
   game.modules.get(MODULE_ID).generateMapping = generateMappingJson;
   
+  // Always show initialization - this is important for troubleshooting
   console.info(`[${MODULE_ID}] Module initialized with enhanced JSON mapping.`);
 });
 
@@ -509,7 +548,7 @@ Hooks.once("ready", async function () {
   try { 
     await game.settings.set("core", "tokenAutoRotate", tokenAutoRotate); 
   } catch (err) { 
-    console.warn(`[${MODULE_ID}] Could not set core.tokenAutoRotate:`, err); 
+    debugWarn("Could not set core.tokenAutoRotate:", err);
   }
   
   // Load our custom art mapping
@@ -518,7 +557,8 @@ Hooks.once("ready", async function () {
   // Apply token configurations to existing compendium documents
   await updateCompendiumWithNewMode();
   
+  // Always show ready state - important for troubleshooting
   console.info(`[${MODULE_ID}] Ready - art system active.`);
-  console.info(`[${MODULE_ID}] Commands available:`);
-  console.info(`  - Generate mapping: game.modules.get("${MODULE_ID}").generateMapping()`);
+  debugInfo("Commands available:");
+  debugInfo(`  - Generate mapping: game.modules.get("${MODULE_ID}").generateMapping()`);
 });
