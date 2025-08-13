@@ -43,7 +43,6 @@
   "esmodules": [
     "./scripts/init.js",
     "./scripts/color-picker.js"
-
   ],
 
   "relationships": {
