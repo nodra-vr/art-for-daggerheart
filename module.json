@@ -1,7 +1,7 @@
 {
   "id": "art-for-daggerheart",
   "title": "Art for Daggerheart",
-  "version": "0.8.3",
+  "version": "0.9.0",
   "compatibility": {
     "minimum": "13",
     "verified": "13"
@@ -13,7 +13,7 @@
       "flags": {}
     },
     {
-      "name": "Mestre Digital",
+      "name": "Mestre Digital", 
       "url": "https://www.youtube.com/c/MestreDigital",
       "flags": {}
     },
@@ -24,18 +24,25 @@
   ],
 
   "flags": {
-    "canUpload": true
+    "canUpload": true,
+    "compendiumArtMappings": {
+      "art-for-daggerheart": {
+        "mapping": "modules/art-for-daggerheart/mappings/adversaries-mapping.json"
+      }
+    }
   },
 
   "packs": [],
   
-  "esmodules": ["./scripts/init.js"],
+  "esmodules": [
+    "./scripts/init.js"
+  ],
 
   "relationships": {
     "systems": [
       {
         "id": "daggerheart",
-        "type": "system",
+        "type": "system", 
         "compatibility": {}
       }
     ]
@@ -45,5 +52,5 @@
   "manifest": "https://github.com/mordachai/art-for-daggerheart/raw/main/module.json",
   "download": "https://github.com/mordachai/art-for-daggerheart/releases/latest/download/art-for-daggerheart.zip",
   
-  "description": "Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game. We’re talking unique portraits and tokens for all the adversaries — all AI-generated just for this module."
+  "description": "Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game. Enhanced with JSON mapping system for easy customization."
 }
