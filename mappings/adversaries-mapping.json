@@ -1,5 +1,25 @@
 {
   "daggerheart.adversaries": {
+    "pnyjIGxxvurcWmTv": {
+      "__DOCUMENT_NAME__": "Demon of Avarice",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Avarice.webp"
+    },
+    "kE4dfhqmIQpNd44e": {
+      "__DOCUMENT_NAME__": "Demon of Despair",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Despair.webp"
+    },
+    "2VN3BftageoTTIzu": {
+      "__DOCUMENT_NAME__": "Demon of Hubris",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Hubris.webp"
+    },
+    "SxSOkM4bcVOFyjbo": {
+      "__DOCUMENT_NAME__": "Demon of Jealousy",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Jealousy.webp"
+    },
+    "5lphJAgzoqZI3VoG": {
+      "__DOCUMENT_NAME__": "Demon of Wrath",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Wrath.webp"
+    },
     "0NxCSugvKQ4W8OYZ": {
       "__DOCUMENT_NAME__": "Cult Adept",
       "actor": "modules/art-for-daggerheart/adversaries/portraits/Cult Adept.webp"
