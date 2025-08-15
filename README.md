@@ -1,12 +1,15 @@
 ### Current Progress (Adversaries):
-![Progress](https://progress-bar.xyz/93/?scale=129&title=Core&width=1000&color=babaca&prefix=&suffix=/129)
+![Progress](https://progress-bar.xyz/93/?scale=129&title=Core_Adversaries&width=1000&color=babaca&prefix=&suffix=/129)
 
 > Work in progress!
 > We’re building up a full set of portraits and varied tokens for all adversaries.
 > Some tokens might have just 3 variants, others can have 10 or more.
 > There’s no “right” number — the important thing is to have at least a few for variety, and usually you’ll see 3–4 per adversary.
 
-[![Github All Releases](https://img.shields.io/github/downloads/mordachai/art-for-daggerheart/total.svg)]()
+![GitHub Release](https://img.shields.io/github/v/release/mordachai/art-for-daggerheart?display_name=release&label=Latest%20release)
+ ![Github All Releases](https://img.shields.io/github/downloads/mordachai/art-for-daggerheart/total.svg) ![Static Badge](https://img.shields.io/badge/FoundryVTT-13-blue)
+
+
 
 ---
 
@@ -38,7 +41,7 @@ And if you want extra style, you can add the built-in Foundry Token Rings around
 
 Choose your look in the module settings:
 
-<img width="800" height="698" alt="image" src="https://github.com/user-attachments/assets/8d4b2ab0-3976-4814-8de5-95639d1368f1" />
+<img width="797" height="700" alt="image" src="https://github.com/user-attachments/assets/e913c647-4584-44fb-b2e7-b02178301f21" />
 
 * **Wildcards Only** – Varied tokens from the `tokens/` folder.
 * **Wildcards + Rings** – Varied tokens plus Foundry’s built-in rings.
