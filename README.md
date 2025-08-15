@@ -1,13 +1,12 @@
 ### Current Progress (Adversaries):
-![Progress](https://progress-bar.xyz/93/?scale=129&title=Core_Adversaries&width=1000&color=babaca&prefix=&suffix=/129)
+![Progress](https://progress-bar.xyz/93/?style=for-the-badge&scale=129&title=Core_Adversaries&width=1000&color=babaca&prefix=&suffix=/129)
 
 > Work in progress!
 > We’re building up a full set of portraits and varied tokens for all adversaries.
 > Some tokens might have just 3 variants, others can have 10 or more.
 > There’s no “right” number — the important thing is to have at least a few for variety, and usually you’ll see 3–4 per adversary.
 
-![GitHub Release](https://img.shields.io/github/v/release/mordachai/art-for-daggerheart?display_name=release&label=Latest%20release)
- ![Github All Releases](https://img.shields.io/github/downloads/mordachai/art-for-daggerheart/total.svg) ![Static Badge](https://img.shields.io/badge/FoundryVTT-13-blue)
+![Static Badge](https://img.shields.io/badge/Foundry_VTT-13-blue?style=for-the-badge) ![Github All Releases](https://img.shields.io/github/downloads/mordachai/art-for-daggerheart/total.svg?style=for-the-badge) ![GitHub Release](https://img.shields.io/github/v/release/mordachai/art-for-daggerheart?display_name=release&style=for-the-badge&label=Current%20version)
 
 
 
