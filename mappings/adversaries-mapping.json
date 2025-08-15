@@ -1,5 +1,9 @@
 {
   "daggerheart.adversaries": {
+    "tBWHW00epmMnkawe": {
+      "__DOCUMENT_NAME__": "Dire Bat",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Dire Bat.webp"
+    },
     "pnyjIGxxvurcWmTv": {
       "__DOCUMENT_NAME__": "Demon of Avarice",
       "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Avarice.webp"
