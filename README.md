@@ -6,10 +6,12 @@
 > Some tokens might have just 3 variants, others can have 10 or more.
 > There’s no “right” number — the important thing is to have at least a few for variety, and usually you’ll see 3–4 per adversary.
 
+[![Github All Releases](https://img.shields.io/github/downloads/mordachai/art-for-daggerheart/total.svg)]()
 
 ---
 
 # Art for Daggerheart
+
 
 Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game.
 We’re talking unique portraits and tokens for all the adversaries — all AI-generated just for this module.
