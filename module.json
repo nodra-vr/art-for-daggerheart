@@ -55,9 +55,9 @@
     }]
   },
 
-  "url": "https://github.com/mordachai/art-for-daggerheart",
-  "manifest": "https://github.com/mordachai/art-for-daggerheart/raw/main/module.json",
-  "download": "https://github.com/mordachai/art-for-daggerheart/releases/latest/download/art-for-daggerheart.zip",
+  "url": "https://github.com/nodra/art-for-daggerheart",
+  "manifest": "https://raw.githubusercontent.com/nodra-vr/art-for-daggerheart/refs/tags/test-v0.1.0/module.json",
+  "download": "https://github.com/nodra-vr/art-for-daggerheart/archive/refs/tags/test-v0.1.0.zip",
   
   "description": "Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game. Enhanced with JSON mapping system for easy customization."
 }

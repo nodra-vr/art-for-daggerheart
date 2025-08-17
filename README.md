@@ -9,12 +9,9 @@
 
 ![Static Badge](https://img.shields.io/badge/Foundry_VTT-13-blue?style=for-the-badge) ![Github All Releases](https://img.shields.io/github/downloads/mordachai/art-for-daggerheart/total.svg?style=for-the-badge) ![GitHub Release](https://img.shields.io/github/v/release/mordachai/art-for-daggerheart?display_name=release&style=for-the-badge&label=Current%20version)
 
-
-
 ---
 
 # Art for Daggerheart
-
 
 Art for Daggerheart is a Foundry VTT module that drops fresh, custom-made art straight into your Daggerheart game.
 We’re talking unique portraits and tokens for all the adversaries — all AI-generated just for this module.
@@ -28,12 +25,12 @@ And if you want extra style, you can add the built-in Foundry Token Rings around
 
 ## Features
 
-* Unique portraits for every adversary.
-* Dynamic wildcard tokens for variety in-game.
-* Circular tokens with a clean, masked look.
-* Optional Foundry Token Rings for extra flair.
-* Automatically updates the Daggerheart adversaries compendium when the world loads.
-* All art is original and made for this module.
+- Unique portraits for every adversary.
+- Dynamic wildcard tokens for variety in-game.
+- Circular tokens with a clean, masked look.
+- Optional Foundry Token Rings for extra flair.
+- Automatically updates the Daggerheart adversaries compendium when the world loads.
+- All art is original and made for this module.
 
 ---
 
@@ -43,10 +40,10 @@ Choose your look in the module settings:
 
 <img width="797" height="700" alt="image" src="https://github.com/user-attachments/assets/e913c647-4584-44fb-b2e7-b02178301f21" />
 
-* **Wildcards Only** – Varied tokens from the `tokens/` folder.
-* **Wildcards + Rings** – Varied tokens plus Foundry’s built-in rings.
-* **Circle Only** – Circular tokens from the `circle/` folder.
-* **Circle + Rings** – Circular tokens plus Foundry’s built-in rings.
+- **Wildcards Only** – Varied tokens from the `tokens/` folder.
+- **Wildcards + Rings** – Varied tokens plus Foundry’s built-in rings.
+- **Circle Only** – Circular tokens from the `circle/` folder.
+- **Circle + Rings** – Circular tokens plus Foundry’s built-in rings.
 
 <img width="1434" height="771" alt="image" src="https://github.com/user-attachments/assets/084f1980-3585-4f41-937b-28a89589fa7a" />
 
@@ -58,9 +55,10 @@ Choose your look in the module settings:
 
 1. Go to **Add-on Modules** in Foundry VTT, **Install Module** and paste this manifest URL in the bottom input:
 
-   ```   
-   https://github.com/mordachai/art-for-daggerheart/raw/main/module.json
    ```
+   https://raw.githubusercontent.com/nodra-vr/art-for-daggerheart/refs/tags/test-v0.1.0/module.json
+   ```
+
 ---
 
 ## How It Works
@@ -72,12 +70,12 @@ If Rings are turned on, it applies Foundry’s own Token Rings with the preset s
 
 ## Developer Notes
 
-* **`portraits/`** – Portrait images for adversary sheets.
-* **`tokens/`** – Wildcard token images with multiple variations.
-* **`circle/`** – Circular-masked token images, based on the portraits.
-* Matches images to actors by name, ignoring case, accents, and numbering.
-* Wildcard mode uses Foundry’s built-in random token selection.
-* Ring modes use Foundry’s built-in Token Rings feature with preset colors and scale.
+- **`portraits/`** – Portrait images for adversary sheets.
+- **`tokens/`** – Wildcard token images with multiple variations.
+- **`circle/`** – Circular-masked token images, based on the portraits.
+- Matches images to actors by name, ignoring case, accents, and numbering.
+- Wildcard mode uses Foundry’s built-in random token selection.
+- Ring modes use Foundry’s built-in Token Rings feature with preset colors and scale.
 
 ---
 
@@ -89,4 +87,4 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## License
 
-The images are done using AI. So, they are under https://creativecommons.org/publicdomain/zero/1.0/ 
+The images are done using AI. So, they are under https://creativecommons.org/publicdomain/zero/1.0/
